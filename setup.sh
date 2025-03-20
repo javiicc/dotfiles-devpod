@@ -36,17 +36,17 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 # Check kubectl installation
 if command -v kubectl &>/dev/null; then
-  echo "kubectl is installed!"
+  echo "kubectl installation successful!"
   kubectl version --client
 else
-  echo "kubectl is not installed"
+  echo "kubectl installation failed"
 fi
 
 
 # --------- Install direnv ---------
 
 sudo apt -y install direnv
-command -v direnv &>/dev/null && echo "direnv is installed" || echo "direnv is not installed"
+command -v direnv &>/dev/null && echo "direnv installation successful!" || echo "direnv installation failed"
 
 
 # --------- Create symlinks ---------
