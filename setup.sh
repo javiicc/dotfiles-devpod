@@ -19,6 +19,13 @@ sudo apt -y install direnv
 command -v direnv &>/dev/null && echo "direnv installation successful!" || echo "direnv installation failed"
 
 
+# --------- Install fd ---------
+
+apt install fd-find
+command -v fdfind &>/dev/null && echo "fdfind installation successful!" || echo "fdfind installation failed"
+ln -s $(which fdfind) ~/.local/bin/fd
+
+
 # --------- Install kubectl last version ---------
 
 echo "Installing kubectl..."
@@ -52,14 +59,17 @@ else
 fi
 
 
-# --------- Install kubectx ---------
+# --------- Install kubectx and kubens ---------
 
 echo "Installing kubectx..."
 
 sudo apt install kubectx
-
 command -v kubectx &>/dev/null && echo "kubectx installation successful!" || echo "kubectx installation failed"
 
+
+# --- Install k9s - Debian package ---
+
+# wget https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_amd64.deb
 
 # --------- Create symlinks ---------
 ln -sf "$PWD/.zshrc" "$XDG_CONFIG_HOME"/.zshrc
