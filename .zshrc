@@ -19,6 +19,25 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=238"
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 
+# --------------- Path Configuration ---------------
+
+setopt extended_glob null_glob
+
+path=(
+    $path
+    $HOME/bin
+    $HOME/.local/bin
+    /home/vscode/.local/bin         # Dev Container Specifics
+    /root/.local/bin                # Dev Container Specifics
+)
+
+# Remove duplicate entries and non-existent directories
+typeset -U path
+path=($^path(N-/))
+
+export PATH
+
+
 # ---------------- Aliases ----------------
 
 alias cdot="cd $DOTFILES"
