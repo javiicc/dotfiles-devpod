@@ -11,7 +11,7 @@ sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl gnupg
 
 
-# --- Install kubectl last version ---
+# --------- Install kubectl last version ---------
 
 echo "Installing kubectl..."
 
@@ -42,7 +42,14 @@ else
   echo "kubectl is not installed"
 fi
 
-# --- Create symlinks ---
+
+# --------- Install direnv ---------
+
+sudo apt -y install direnv
+command -v direnv &>/dev/null && echo "direnv is installed" || echo "direnv is not installed"
+
+
+# --------- Create symlinks ---------
 ln -sf "$PWD/.zshrc" "$XDG_CONFIG_HOME"/.zshrc
 ln -sf "$PWD/.zshrc" "$XDG_CONFIG_HOME"/.zprofile
 
