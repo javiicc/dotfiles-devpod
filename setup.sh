@@ -30,10 +30,10 @@ ln -s $(which fdfind) ~/.local/bin/fd
 
 # --------- Install tmux ---------
 
-echo "Installing tmux..."
+# echo "Installing tmux..."
 
-sudo apt install tmux
-command -v tmux &>/dev/null && echo "tmux installation successful!" || echo "tmux installation failed"
+# sudo apt install tmux
+# command -v tmux &>/dev/null && echo "tmux installation successful!" || echo "tmux installation failed"
 
 # --------- Install kubectl last version ---------
 
