@@ -13,6 +13,8 @@ sudo apt install -y apt-transport-https ca-certificates curl gnupg
 
 # --------- Install direnv ---------
 
+echo "Installing direnv..."
+
 sudo apt -y install direnv
 command -v direnv &>/dev/null && echo "direnv installation successful!" || echo "direnv installation failed"
 
@@ -51,6 +53,8 @@ fi
 
 
 # --------- Install kubectx ---------
+
+echo "Installing kubectx..."
 
 sudo apt install kubectx
 
