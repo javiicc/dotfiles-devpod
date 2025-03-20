@@ -26,6 +26,10 @@ command -v fdfind &>/dev/null && echo "fdfind installation successful!" || echo 
 ln -s $(which fdfind) ~/.local/bin/fd
 
 
+# --------- Install tmux ---------
+apt install tmux
+
+
 # --------- Install kubectl last version ---------
 
 echo "Installing kubectl..."
