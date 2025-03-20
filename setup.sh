@@ -21,13 +21,18 @@ command -v direnv &>/dev/null && echo "direnv installation successful!" || echo 
 
 # --------- Install fd ---------
 
-apt install fd-find
+echo "Installing fd..."
+
+sudo apt install fd-find
 command -v fdfind &>/dev/null && echo "fdfind installation successful!" || echo "fdfind installation failed"
 ln -s $(which fdfind) ~/.local/bin/fd
 
 
 # --------- Install tmux ---------
-apt install tmux
+
+echo "Installing tmux..."
+
+sudo apt install tmux
 command -v tmux &>/dev/null && echo "tmux installation successful!" || echo "tmux installation failed"
 
 # --------- Install kubectl last version ---------
@@ -69,11 +74,22 @@ echo "Installing kubectx..."
 
 sudo apt install kubectx
 command -v kubectx &>/dev/null && echo "kubectx installation successful!" || echo "kubectx installation failed"
+command -v kubens &>/dev/null && echo "kubens installation successful!" || echo "kubens installation failed"
 
 
 # --- Install k9s - Debian package ---
 
 # wget https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_amd64.deb
+
+
+echo "Installation summary:\n"
+command -v direnv &>/dev/null && echo "- direnv installation successful!" || echo "- direnv installation failed"
+command -v fdfind &>/dev/null && echo "- fdfind installation successful!" || echo "- fdfind installation failed"
+command -v tmux &>/dev/null && echo "- tmux installation successful!" || echo "- tmux installation failed"
+command -v kubectl &>/dev/null && echo "- kubectl installation successful!" || echo "- kubectl installation failed"
+command -v kubectx &>/dev/null && echo "- kubectx installation successful!" || echo "- kubectx installation failed"
+command -v kubens &>/dev/null && echo "- kubens installation successful!" || echo "- kubens installation failed"
+
 
 # --------- Create symlinks ---------
 ln -sf "$PWD/.zshrc" "$XDG_CONFIG_HOME"/.zshrc
